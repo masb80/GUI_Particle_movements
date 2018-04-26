@@ -1,0 +1,4 @@
+/usr/include/SDL
+sdl thakle compile command
+g++ basic.cxx -w -lSDL2 -o basic
+
