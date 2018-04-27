@@ -15,7 +15,7 @@ namespace myStd
 			Swarm();
 		
 		public:
-			const static int NPARTICLES = 5000;
+			const static int NPARTICLES = 6000;
 			Particle * const getParticles() { return m_pParticles;}
 			virtual ~Swarm();
 	}; /*CLASS */
