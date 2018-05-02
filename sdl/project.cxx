@@ -108,9 +108,9 @@ int main()
 		{
 			Particle particle = pParticles[i]; // taking each particle
 
-			int x = (particle.m_x + 1) * Screen::SCREEN_WIDTH/2; // x position of the particle
-			int y = (particle.m_y + 1) * Screen::SCREEN_HEIGHT/2; // y position of the particle
-			
+			int x = (particle.m_x +1 ) * Screen::SCREEN_WIDTH/2; // x position of the particle
+			int y = (particle.m_y ) * Screen::SCREEN_WIDTH/2 + Screen::SCREEN_HEIGHT/2; // y position of the particle
+
 			screen.setPixel(x,y,red, green, blue);
 		}
 	/*
