@@ -59,7 +59,8 @@ namespace myStd
 		//255 in hexadecimal is 0xFF, 0x means this is hexadecimal velue
 		//memset(buffer, 255, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
 		//memset(m_buffer, 0xFF, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
-		memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));/*
+		memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+		/*
 		for(int i =0; i < SCREEN_WIDTH * SCREEN_HEIGHT; i++)
 		{
 			m_buffer[i] = 0xFF00FFFF;
@@ -67,6 +68,11 @@ namespace myStd
 		}
 		*/
 		return true;	
+	}
+	void Screen::clear()
+	{
+		memset(m_buffer, 0, SCREEN_WIDTH * SCREEN_HEIGHT * sizeof(Uint32));
+		
 	}
 	void Screen::setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue)
 	{

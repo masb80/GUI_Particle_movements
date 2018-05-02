@@ -13,6 +13,15 @@ namespace myStd
 	{
 		delete [] m_pParticles;
 	}
+	void Swarm::update()
+	{
+		// in here we will update the particles 
+		for(int i =0; i < Swarm::NPARTICLES; i++)
+		{
+			m_pParticles[i].update();
+		}
+
+	}
 
 }
 

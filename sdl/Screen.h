@@ -4,6 +4,7 @@
 // we are defining below
 #define SCREEN_H_
 #include</usr/include/SDL2/SDL.h>
+//#include<SDL.h>
 
 namespace myStd
 {	
@@ -24,6 +25,7 @@ namespace myStd
 			void update();
 			bool processEvents();
 			void close();
+			void clear();
 			void setPixel(int x, int y, uint8_t red, uint8_t green, uint8_t blue); // uint8_t is char type 
 	};
 }

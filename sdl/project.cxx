@@ -3,6 +3,7 @@
 // SDL, Simple Direct Media Layer
 #include<iostream>
 #include</usr/include/SDL2/SDL.h>
+//#include<SDL.h>
 #include"Screen.h"
 #include"Swarm.h"
 #include<stdlib.h>
@@ -97,16 +98,18 @@ int main()
 		// updates particles
 		// draw praticles
 		int elapsed = SDL_GetTicks(); // This is a number in SDL in mili second
+		screen.clear();
+		swarm.update(); // every mili second it will updates the position of the particles(giving constant speed as a position change in in the particles and calling from the swarm, )
 		unsigned char green =(unsigned char)((1 + sin(elapsed*0.001))*128); // multiply with 128 to make 255. becuse green is highest 255. 
 		unsigned char red =(unsigned char)((1 + sin(elapsed*0.002))*128); // multiply with 128 to make 255. becuse green is highest 255. 
 		unsigned char blue =(unsigned char)((1 + sin(elapsed*0.003))*128); // multiply with 128 to make 255. becuse green is highest 255. 
 		const Particle * const pParticles = swarm.getParticles(); 
 		for(int i =0; i < Swarm::NPARTICLES; i++)
 		{
-			Particle particle = pParticles[i];
+			Particle particle = pParticles[i]; // taking each particle
 
-			int x = (particle.m_x + 1) * Screen::SCREEN_WIDTH/2;
-			int y = (particle.m_y + 1) * Screen::SCREEN_HEIGHT/2;
+			int x = (particle.m_x + 1) * Screen::SCREEN_WIDTH/2; // x position of the particle
+			int y = (particle.m_y + 1) * Screen::SCREEN_HEIGHT/2; // y position of the particle
 			
 			screen.setPixel(x,y,red, green, blue);
 		}

@@ -4,6 +4,7 @@
 // we are defining below
 #define PARTICLE_H_
 #include</usr/include/SDL2/SDL.h>
+//#include<SDL.h>
 
 namespace myStd
 {	
@@ -12,10 +13,12 @@ namespace myStd
 		public:
 			double m_x;
 			double m_y; // duble will plexible in moving pixel to pixel
+			double m_xspeed;
+			double m_yspeed; // duble will plexible in moving pixel to pixel
 		public:
 			Particle();
 			//virtual ~Particle();
-		
+			void update(); // it will update the particles in every secinds		
 	}; /*CLASS */
 } /*NAMESPACE */
 

@@ -4,6 +4,7 @@
 // we are defining below
 #define SWARM_H_
 #include</usr/include/SDL2/SDL.h>
+//#include<SDL.h>
 #include "Particle.h"
 namespace myStd
 {	
@@ -13,7 +14,7 @@ namespace myStd
 			Particle *m_pParticles; 
 		public:
 			Swarm();
-		
+			void update();	
 		public:
 			const static int NPARTICLES = 5000;
 			Particle * const getParticles() { return m_pParticles;}
