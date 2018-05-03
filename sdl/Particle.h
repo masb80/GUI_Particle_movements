@@ -20,7 +20,7 @@ namespace myStd
 		public:
 			Particle();
 			//virtual ~Particle();
-			void update(); // it will update the particles in every secinds		
+			void update( int interval); // it will update the particles in every secinds		
 	}; /*CLASS */
 } /*NAMESPACE */
 

@@ -11,10 +11,11 @@ namespace myStd
 	class 	Swarm
 	{
 		private:
-			Particle *m_pParticles; 
+			Particle *m_pParticles;
+			int lastTime;
 		public:
 			Swarm();
-			void update();	
+			void update(int elapsed);	
 		public:
 			const static int NPARTICLES = 3000;
 			Particle * const getParticles() { return m_pParticles;}

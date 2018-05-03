@@ -99,7 +99,7 @@ int main()
 		// draw praticles
 		int elapsed = SDL_GetTicks(); // This is a number in SDL in mili second
 		screen.clear();
-		swarm.update(); // every mili second it will updates the position of the particles(giving constant speed as a position change in in the particles and calling from the swarm, )
+		swarm.update( elapsed); // every mili second it will updates the position of the particles(giving constant speed as a position change in in the particles and calling from the swarm, )
 		unsigned char green =(unsigned char)((1 + sin(elapsed*0.001))*128); // multiply with 128 to make 255. becuse green is highest 255. 
 		unsigned char red =(unsigned char)((1 + sin(elapsed*0.002))*128); // multiply with 128 to make 255. becuse green is highest 255. 
 		unsigned char blue =(unsigned char)((1 + sin(elapsed*0.003))*128); // multiply with 128 to make 255. becuse green is highest 255. 
