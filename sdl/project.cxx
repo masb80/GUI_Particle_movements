@@ -138,6 +138,7 @@ int main()
 		}
 		*/
 	//	screen.setPixel(400,300,0,255,0);
+		screen.blurAlgorithm();
 		screen.update();
 		if(screen.processEvents() == false)
 		{
