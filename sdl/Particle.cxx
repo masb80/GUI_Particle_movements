@@ -9,6 +9,12 @@ namespace myStd
 	
 	Particle::Particle(): m_x(0), m_y(0) 
 	{
+		init();
+	}
+	void Particle::init() 
+	{
+	  	m_x = 0;
+		m_y = 0;
 		//m_x=0, m_y=0; // making position 0 or center
 		// each run the particles will create its random location
 //		m_x = ((2.0 * rand())/RAND_MAX)-1;// [-1,1] // particals positions x
@@ -19,7 +25,9 @@ namespace myStd
 		// particles speed and dierections
 		// rand()/RAND_MAX give 0 to 1.0
 		m_directions = (2.0 *M_PI* rand())/RAND_MAX; // represents angle to go to the particles
-		m_speed = (0.0001 * rand())/RAND_MAX; // random number 
+		m_speed = (0.04 * rand())/RAND_MAX; // random number
+
+		m_speed *=m_speed;
 
 	}
 	void Particle::update( int interval)
@@ -39,10 +47,14 @@ namespace myStd
 		if(m_y < -1.0 || m_y >= 1.0)
 			m_yspeed = - m_yspeed;
 #endif
+		m_directions += interval * 0.0003;
 		double x_speed = m_speed * cos(m_directions);
 		double y_speed = m_speed * sin(m_directions);
 		m_x += x_speed * interval;
 		m_y += y_speed * interval;
+		
+		if(m_x < -1.0 || m_x > 1.0 || m_y < -1.0 || m_y > 1.0)
+			init();
 
 	}
 

@@ -15,8 +15,10 @@ namespace myStd
 			double m_y; // duble will plexible in moving pixel to pixel
 			//double m_xspeed;
 			//double m_yspeed; // duble will plexible in moving pixel to pixel
+		private:
 			double m_speed;
 			double m_directions;
+			void init();
 		public:
 			Particle();
 			//virtual ~Particle();
